@@ -4,8 +4,9 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 const FLAT_PROJECTS = [
   { id: 'kore',           year: 2026, title: 'Kore',           platform: 'desktop dock app', image: '/images/project-kore.png',
     description: 'A minimal desktop dock application designed to keep your most-used tools one click away, reducing context-switching and keeping you in flow.' },
-  { id: 'gather',         year: 2026, title: 'Gather',         platform: 'Desktop + mobile', image: '/images/project-gather.png',
-    description: 'A collaborative platform that brings distributed teams together. Gather redesigns how people share context and make decisions across time zones.' },
+  { id: 'beyond-sunday',  year: 2026, title: 'Beyond Sunday',  platform: 'Desktop + mobile', image: '/images/project-gather.png',
+    description: 'A collaborative platform that brings distributed teams together. Beyond Sunday redesigns how people share context and make decisions across time zones.',
+    caseStudyUrl: '/case-studies/beyond-sunday.html' },
   { id: 'meal-planning',  year: 2025, title: 'Meal Planning',  platform: 'mobile', image: '/images/project-meal-planning.avif',
     description: 'AI-Powered family meal planner\nTurn what\'s already in your kitchen into meals everyone will love. This app learns your family\'s tastes, dietary needs, and preferences — and gets smarter every week!' },
   { id: 'ai-planner',     year: 2025, title: 'AI Planner',     platform: 'mobile', image: '/images/project-ai-planner.avif',
@@ -33,7 +34,7 @@ YEARS.forEach(y => { YEAR_START_INDEX[y] = FLAT_PROJECTS.findIndex(p => p.year =
 
 const SIDEBAR_PROJECTS = [
   { label: 'Kore  (desktop dock app)',   year: 2026, id: 'kore' },
-  { label: 'Gather  (Desktop + mobile)', year: 2026, id: 'gather' },
+  { label: 'Beyond Sunday  (Desktop + mobile)', year: 2026, id: 'beyond-sunday' },
   { label: 'Meal Planning (mobile)',     year: 2025, id: 'meal-planning' },
   { label: 'AI Planner  (mobile)',       year: 2025, id: 'ai-planner' },
   { label: 'Family Superapp  (mobile)',  year: 2025, id: 'family-superapp' },
@@ -225,6 +226,12 @@ function ProjectCard({ project, isActive, index = 0 }) {
         </p>
         {headline && <p className="font-semibold text-[11px] text-black mb-1 leading-snug">{headline}</p>}
         <p className="font-medium text-[11px] text-black leading-relaxed">{body}</p>
+        {project.caseStudyUrl && (
+          <a href={project.caseStudyUrl} target="_blank" rel="noopener noreferrer"
+            className="inline-block mt-2 text-[11px] font-semibold text-black underline hover:opacity-60 transition-opacity">
+            View case study →
+          </a>
+        )}
       </div>
     </div>
   )
@@ -249,6 +256,12 @@ function MobileCard({ project, index = 0 }) {
         </p>
         {headline && <p className="font-semibold text-[10px] text-black mb-0.5 leading-snug">{headline}</p>}
         <p className="font-medium text-[10px] text-black leading-relaxed line-clamp-3">{body}</p>
+        {project.caseStudyUrl && (
+          <a href={project.caseStudyUrl} target="_blank" rel="noopener noreferrer"
+            className="inline-block mt-1.5 text-[10px] font-semibold text-black underline hover:opacity-60 transition-opacity">
+            View case study →
+          </a>
+        )}
       </div>
     </div>
   )

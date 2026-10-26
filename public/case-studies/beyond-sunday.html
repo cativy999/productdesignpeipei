@@ -101,7 +101,6 @@
   }
   .social-icons a:hover{background:var(--olive); border-color:var(--olive); color:var(--white);}
   .social-icons svg{width:16px; height:16px;}
-  @media (max-width:760px){ .nav-links{display:none;} }
 
   /* ---------- HERO ---------- */
   .hero{
@@ -335,18 +334,58 @@
   .fade-up{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
   .fade-up.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){ .fade-up{transition:none; opacity:1; transform:none;} }
+
+  /* ---------- TABS ---------- */
+  .nav-links{gap:clamp(6px,1vw,14px); align-items:center;}
+  .nav-links a{padding:9px 18px; border-radius:999px; border:1.5px solid transparent; font-weight:500; white-space:nowrap; transition:background .2s ease, color .2s ease, border-color .2s ease;}
+  .nav-links a:hover{background:var(--cream-2); color:var(--ink);}
+  .nav-links a.active, .nav-links a.active:hover{background:var(--black-btn); color:var(--white); font-weight:600; border-color:var(--black-btn); box-shadow:0 6px 16px -8px rgba(21,19,15,.55);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block; animation:tabIn .35s ease;}
+  @keyframes tabIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;}}
+  @media (prefers-reduced-motion: reduce){ .tab-panel.active{animation:none;} }
+  @media (max-width:1060px){ .social-icons{display:none;} }
+  @media (max-width:900px){
+    nav{flex-wrap:wrap; row-gap:12px; padding-top:14px; padding-bottom:14px;}
+    .nav-links{order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px; scrollbar-width:none;}
+    .nav-links::-webkit-scrollbar{display:none;}
+  }
+  .hero-lede{font-size:1.15rem; line-height:1.65; max-width:680px; margin:0 0 22px; color:var(--ink-soft);}
+  .next-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:760px){.next-grid{grid-template-columns:1fr;}}
+  .next-card{display:block; text-decoration:none; border:1px solid var(--hairline); border-radius:10px; padding:24px 26px; background:var(--cream-2); transition:transform .25s ease, border-color .25s ease, background .25s ease;}
+  .next-card:hover{transform:translateY(-3px); border-color:var(--olive); background:#fff;}
+  .next-card .eyebrow{display:block; margin-bottom:10px; color:var(--olive-soft);}
+  .next-card p{margin:0; font-size:.98rem; line-height:1.55;}
+  .insight-list{list-style:none; margin:0; padding:0;}
+  .insight-list li{padding:18px 0; border-bottom:1px solid var(--hairline); font-size:.98rem; line-height:1.65; color:var(--ink-soft);}
+  .insight-list li:first-child{border-top:1px solid var(--hairline);}
+  .insight-list li strong{display:block; font-family:'Fraunces',serif; font-weight:500; font-size:1.12rem; color:var(--ink); margin-bottom:4px;}
+  .sub-h{font-family:'Fraunces',serif; font-weight:500; font-size:1.35rem; margin:0 0 14px; color:var(--ink);}
+  .shot{aspect-ratio:16/10; border:1.5px dashed var(--hairline); border-radius:3px; background:var(--cream-2); display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; color:var(--stone); font-size:.9rem;}
+  .tag-note{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--olive-soft); margin-bottom:12px; display:block;}
+  .lesson{font-family:'Fraunces',serif; font-style:italic; font-size:clamp(1.3rem,2.6vw,1.9rem); line-height:1.4; color:var(--ink); max-width:820px; margin:0; padding:30px 0 6px; border-top:1px solid var(--hairline);}
+  .reflection{background:var(--olive); color:var(--cream); border-radius:6px; padding:clamp(32px,5vw,64px);}
+  .reflection .label{color:#C9CBB6;}
+  .reflection h2{color:var(--white); margin-top:10px;}
+  .reflection p{color:#DCDCC9;}
+  .brand-extra{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0 0 28px;}
+  @media (max-width:760px){.brand-extra{grid-template-columns:1fr;}}
+  .brand-extra .next-card{cursor:default;} .brand-extra .next-card:hover{transform:none; border-color:var(--hairline); background:var(--cream-2);}
+  footer{padding:40px clamp(20px,5vw,64px) 36px;}
+  footer .foot-bottom{margin-top:0; padding-top:0; border-top:none;}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="brand"><img src="data:image/png;base64,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" alt="Beyond Sunday" style="height:32px; width:auto; display:block;"></div>
-  <div class="nav-links">
-    <a href="#overview">Overview</a>
-    <a href="#research">Research</a>
-    <a href="#decisions">Decisions</a>
-    <a href="#brand">Brand Guidelines</a>
-    <a href="#progress">Progress</a>
+  <div class="nav-links" role="tablist" aria-label="Case study sections">
+    <a href="#overview" data-tab="overview" role="tab" aria-controls="tab-overview">Overview</a>
+    <a href="#research" data-tab="research" role="tab" aria-controls="tab-research">Research</a>
+    <a href="#solution" data-tab="solution" role="tab" aria-controls="tab-solution">Solution</a>
+    <a href="#adoption" data-tab="adoption" role="tab" aria-controls="tab-adoption">Adoption and Results</a>
+    <a href="#brand" data-tab="brand" role="tab" aria-controls="tab-brand">Brand Guidelines</a>
   </div>
   <div class="nav-actions">
     <div class="social-icons">
@@ -359,10 +398,14 @@
   <div class="progress-track"><div class="progress-fill" id="scrollProgress"></div></div>
 </nav>
 
+<main>
+
+<div class="tab-panel active" id="tab-overview" role="tabpanel">
 <div class="hero">
   <div class="hero-intro">
     <span class="eyebrow">Case Study · Product &amp; UX Design</span>
-    <h1 class="serif">Designing a Better Way to Host</h1>
+    <h1 class="serif">Beyond Sunday: Designing a Better Way to Host</h1>
+    <p class="hero-lede">A community events platform for LDS singles, built around the volunteers who organize gatherings. Conversations with about 10 organizers showed that hosting, not attending, is the bottleneck. Early adoption shows that building what hosts ask for is not enough on its own.</p>
     <div class="tags">
       <span class="tag">YSA Community</span>
       <span class="tag">Progressive Web App</span>
@@ -374,30 +417,35 @@
   </div>
 
   <div class="meta-row">
-    <div class="meta-item"><span class="eyebrow">Role</span><div class="val">Founder · Product Designer · AI-assisted Developer</div></div>
+    <div class="meta-item"><span class="eyebrow">Role</span><div class="val">Founder, product designer, AI-assisted developer</div></div>
     <div class="meta-item"><span class="eyebrow">Timeline</span><div class="val">March 2026 — Present</div></div>
-    <div class="meta-item"><span class="eyebrow">Platform</span><div class="val">Progressive Web App (PWA)</div></div>
+    <div class="meta-item"><span class="eyebrow">Platform</span><div class="val">Progressive web app</div></div>
+    <div class="meta-item"><span class="eyebrow">Status</span><div class="val">Live, early adoption.<br>85 people signed up and 137 events created.</div></div>
     <div class="meta-item">
       <span class="eyebrow">Tools</span>
       <div class="val tool-chips">
         <span class="tool-chip"><svg viewBox="0 0 16 16" fill="currentColor" stroke="none"><path d="M8 0.5 L9.1 6.2 L14.8 7.3 L9.1 8.4 L8 14.1 L6.9 8.4 L1.2 7.3 L6.9 6.2 Z"/></svg>Claude</span>
-        <span class="tool-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="4" r="2.15"/><circle cx="8" cy="8" r="2.15"/><circle cx="6" cy="12" r="2.15"/></svg>Figma</span>
-        <span class="tool-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 2.5v3M10.5 2.5v3M4 5.5h8v2a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-2Z"/><path d="M8 11.5v2"/></svg>MCP</span>
-        <span class="tool-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5.5,4 2,8 5.5,12"/><polyline points="10.5,4 14,8 10.5,12"/></svg>GitHub</span>
+        <span class="tool-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="4" r="2.15"/><circle cx="8" cy="8" r="2.15"/><circle cx="6" cy="12" r="2.15"/></svg>Figma MCP</span>
+                <span class="tool-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5.5,4 2,8 5.5,12"/><polyline points="10.5,4 14,8 10.5,12"/></svg>GitHub</span>
         <span class="tool-chip"><svg viewBox="0 0 16 16" fill="currentColor" stroke="none"><path d="M8 2.2 L14.3 13.4 L1.7 13.4 Z"/></svg>Vercel</span>
       </div>
     </div>
   </div>
 </div>
 
-<section id="overview">
+<section>
   <div class="section-head">
-    <span class="label">Overview</span>
-    <h2>A community event platform for LDS Young Single Adults — built around the people who make gatherings happen.</h2>
+    <span class="label">The problem</span>
+    <h2>LDS singles want more events. Hosts carry the weight of making them.</h2>
   </div>
   <div class="two-col">
-    <p>Beyond Sunday helps members discover activities, while giving volunteer organizers the tools to create, manage, and promote events without the usual chaos of group chats and scattered flyers.</p>
-    <p>The project began with a simple question: how can we create more opportunities for meaningful connection within the YSA community? As the project evolved, I realized the biggest challenge wasn't convincing people to attend events — it was making it easier for people to organize them.</p>
+    <p>LDS singles want more events to attend, but volunteer hosts carry a heavy, scattered workload to create them, and the free tools they use do not fix it.</p>
+    <ul class="insight-list">
+      <li><strong>Attendees</strong>Events are scattered across group chats, social posts, and word of mouth, so singles miss things or feel awkward asking.</li>
+      <li><strong>Hosts, planning</strong>Wards and groups cannot see each other&rsquo;s plans, so events collide and split both attendance and volunteers.</li>
+      <li><strong>Hosts, effort</strong>Hosts retype the same details across several tools, and accounts get orphaned when a calling changes hands.</li>
+      <li><strong>Adoption</strong>Free, familiar tools (Google Sheets, Instagram, Facebook) already exist, so the product has to be worth switching to.</li>
+    </ul>
   </div>
 </section>
 
@@ -413,24 +461,52 @@
       <div class="caption-tag">Local YSA activity, 2026</div>
     </div>
     <div>
-      <p>I've been a member of The Church of Jesus Christ of Latter-day Saints for over ten years and have taken part in countless YSA activities, conferences, dances, and social events — many of which genuinely helped people build friendships, and some even led to marriage.</p>
-      <p>After moving to California, I noticed my local YSA community was much smaller than what I'd experienced before. Finding people in a similar stage of life became harder, which pushed me to think more carefully about how people discover opportunities to connect.</p>
-      <p>At first, I assumed the problem was simply helping people find more events. Attending more activities and talking with organizers showed me something more important.</p>
+      <p>I have been a member of The Church of Jesus Christ of Latter-day Saints for over ten years and have joined many young single adult activities, conferences, and dances. Some of those events built real friendships.</p>
+      <p>After moving to California, I found my local community much smaller. Finding people in a similar stage of life got harder, which made me think about how people discover chances to connect.</p>
+      <p>I first assumed the problem was helping people find more events. Attending events and talking with organizers showed me something else: the attendees were not the bottleneck. The hosts were.</p>
     </div>
   </div>
 </section>
 
 <div class="quote-wrap">
-  <p class="quote serif">The attendees weren't the bottleneck. The hosts were.</p>
+  <p class="quote serif">The attendees weren&rsquo;t the bottleneck. The hosts were.</p>
 </div>
 
-<section id="research">
+<section>
   <div class="section-head">
-    <span class="label">Research &amp; Discovery</span>
-    <h2>Every successful gathering hides a long list of invisible work.</h2>
+    <span class="label">In this case study</span>
+    <h2>Where to go next.</h2>
+  </div>
+  <div class="next-grid">
+    <a class="next-card" href="#research" data-tab="research"><span class="eyebrow">Research</span><p>Who I talked to and what hosts told me.</p></a>
+    <a class="next-card" href="#solution" data-tab="solution"><span class="eyebrow">Solution</span><p>The six key decisions.</p></a>
+    <a class="next-card" href="#adoption" data-tab="adoption"><span class="eyebrow">Adoption and results</span><p>Results, the adoption challenge, and what I am testing next.</p></a>
+    <a class="next-card" href="#brand" data-tab="brand"><span class="eyebrow">Brand guidelines</span><p>The brand guide in short.</p></a>
+  </div>
+</section>
+</div>
+
+<div class="tab-panel" id="tab-research" role="tabpanel">
+<section>
+  <div class="section-head">
+    <span class="label">Research</span>
+    <h2>About 10 hosts and roughly 20 people in total shaped this project.</h2>
   </div>
   <div class="two-col">
-    <p>Through prototype testing, event attendance, and recurring conversations with volunteer organizers, one pattern kept surfacing: people generally wanted to attend activities. The real challenge was everything required to make those activities happen in the first place.</p>
+    <p>They showed that hosting, not attending, is the bottleneck.</p>
+    <div>
+      <h3 class="sub-h">Who I talked to</h3>
+      <p style="margin-top:0">I interviewed about 10 organizers across wards and groups. Counting attendees who are not hosts, I spoke with roughly 20 people in total. I also tested prototypes and attended events.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="section-head">
+    <span class="label">What I found</span>
+    <h2>People generally wanted to attend. The hard part was everything needed to make an event happen.</h2>
+  </div>
+  <div class="two-col">
     <ul class="pain-list">
       <li><span class="pain-text"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14.5s5-4.7 5-8.4A5 5 0 0 0 3 6.1c0 3.7 5 8.4 5 8.4Z"/><circle cx="8" cy="6" r="1.7"/></svg><span>Finding venues</span></span><span class="n">01</span></li>
       <li><span class="pain-text"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.8" cy="5.3" r="2"/><path d="M2 13c0-2.2 1.7-3.6 3.8-3.6S9.6 10.8 9.6 13"/><circle cx="11" cy="5.8" r="1.6"/><path d="M10 9.6c1.7 0 3 1.2 3 3"/></svg><span>Coordinating volunteers &amp; co-hosts</span></span><span class="n">02</span></li>
@@ -439,23 +515,32 @@
       <li><span class="pain-text"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h12v7H6.5L4 13v-2.5H2Z"/><path d="M6.2 6.4c0-.9.8-1.6 1.8-1.6s1.8.6 1.8 1.5c0 1.3-1.8 1.2-1.8 2.5"/><circle cx="8" cy="9.7" r="0.15" fill="currentColor" stroke="none"/></svg><span>Managing RSVPs &amp; questions</span></span><span class="n">05</span></li>
       <li><span class="pain-text"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 3.7 5.8a1.5 1.5 0 0 1 1.4-1h5.8a1.5 1.5 0 0 1 1.4 1l1.2 3.7"/><rect x="1.7" y="9.5" width="12.6" height="3" rx="1"/><circle cx="4.3" cy="12.6" r="1"/><circle cx="11.7" cy="12.6" r="1"/></svg><span>Coordinating transportation</span></span><span class="n">06</span></li>
     </ul>
+    <div>
+      <h3 class="sub-h">What hosts told me, in my words</h3>
+      <ul class="insight-list">
+        <li><strong>Events collide.</strong>Wards with their own budgets pick dates without checking each other. Two events on one night confuse people, split the crowd, and split the volunteers who help each other.</li>
+        <li><strong>People need rides and lodging.</strong>Attendees look for carpools, and for conferences out of state they look for shared lodging.</li>
+        <li><strong>Retyping is a chore.</strong>Hosts design a flyer first, then retype the same details into Facebook, Instagram, or a spreadsheet.</li>
+        <li><strong>Accounts depend on one person&rsquo;s calling.</strong>An Instagram handle made for an activities role stays behind when that person is released, and nobody else can manage it.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="section-head">
-    <span class="label">Product Insight</span>
-    <h2>If hosting becomes easier, more meaningful events happen.</h2>
+    <span class="label">Insight</span>
+    <h2>If hosting gets easier, more meaningful events happen.</h2>
   </div>
   <div class="two-col">
-    <p>Originally, Beyond Sunday was meant to help people build stronger relationships directly. Research showed that meaningful relationships actually begin with meaningful opportunities to meet — and those opportunities depend entirely on someone willing to organize them.</p>
-    <p>Rather than trying to solve loneliness head-on, I shifted the product's focus to empowering the people who create those opportunities. If hosting becomes easier, more events happen. If more events happen, more people have a natural chance to connect. <em>If I can help hosts succeed, everyone benefits.</em></p>
+    <p>If more events happen, more people have a natural chance to connect. Instead of solving loneliness head-on, I focused the product on the people who create those opportunities.</p>
+    <p><em>If I can help hosts succeed, everyone benefits.</em></p>
   </div>
 </section>
 
-<section>
+<section style="padding-top:0">
   <div class="section-head">
-    <span class="label">Design Goals</span>
+    <span class="label">Design goals</span>
     <h2>Three goals that every design decision had to answer to.</h2>
   </div>
   <div class="goals">
@@ -463,83 +548,160 @@
       <svg class="goal-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"/></svg>
       <span class="eyebrow">Effort</span>
       <h3 class="serif">Reduce the effort to organize</h3>
-      <p>Creating an event should feel simple, not overwhelming — even for a first-time host.</p>
+      <p>Creating an event should feel simple, even for a first-time host.</p>
     </div>
     <div class="goal">
       <svg class="goal-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20.5 8 12 13 3.5 8Z"/><path d="M3.5 12.5 12 17.5 20.5 12.5"/><path d="M3.5 16.5 12 21.5 20.5 16.5"/></svg>
       <span class="eyebrow">Burden</span>
       <h3 class="serif">Share the load</h3>
-      <p>Hosting is rarely a one-person job. The platform should support collaboration and co-hosting by default.</p>
+      <p>Hosting is rarely a one-person job, so co-hosting is built in.</p>
     </div>
     <div class="goal">
       <svg class="goal-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3.2"/></svg>
       <span class="eyebrow">Clarity</span>
       <h3 class="serif">One source of truth</h3>
-      <p>Replace scattered Instagram posts, Facebook groups, and group chats with one reliable place for event information.</p>
+      <p>One reliable place instead of scattered posts, groups, and chats.</p>
     </div>
   </div>
 </section>
+</div>
 
-<section id="decisions">
+<div class="tab-panel" id="tab-solution" role="tabpanel">
+<section>
   <div class="section-head">
-    <span class="label">Key Decisions</span>
-    <h2>Three places where reducing friction mattered most.</h2>
+    <span class="label">Solution</span>
+    <h2>Each decision below answers something hosts told me.</h2>
   </div>
-
+  <p style="margin:0 0 70px">Six key decisions shaped the product.</p>
   <div class="decision">
     <div class="two-col">
-      <div class="img-slot frame">
-        <img src="https://picsum.photos/seed/beyondsunday-eventdetail/900/650" alt="Event detail screen mockup placeholder">
-        <div class="mark m-tl"></div><div class="mark m-br"></div>
-        <div class="caption-tag">Event Detail Page</div>
-      </div>
+      <div class="img-slot shot" role="img" aria-label="Screen to add: Event page">Screen to add: Event page</div>
       <div class="text-slot">
-        <span class="eyebrow">01 — The event detail page</span>
-        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">One page, instead of five apps.</h3>
-        <p>Designed as the central hub for each event: attendees can RSVP, add it to their calendar, share it, ask questions, and coordinate carpools — without leaving the page.</p>
-        <p>One unexpected technical challenge was getting the shared event preview image to render correctly across platforms like Facebook. Solving it noticeably improved how events looked when members shared them.</p>
+        <span class="eyebrow">01 — The event page</span>
+        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">One event page instead of five apps.</h3>
+        <p>The event page is the hub: attendees can RSVP, add the event to a calendar, share it, ask questions, and coordinate carpools without leaving. Getting the shared preview image to render correctly on Facebook improved how events look when shared.</p>
       </div>
     </div>
   </div>
-
   <div class="decision">
     <div class="two-col">
-      <div class="img-slot frame">
-        <img src="https://picsum.photos/seed/beyondsunday-createevent/900/650" alt="Create event screen mockup placeholder">
-        <div class="mark m-tl"></div><div class="mark m-br"></div>
-        <div class="caption-tag">Create Event Page</div>
-      </div>
+      <div class="img-slot shot" role="img" aria-label="Screen to add: Create event with flyer upload">Screen to add: Create event with flyer upload</div>
       <div class="text-slot">
-        <span class="eyebrow">02 — The create event page</span>
+        <span class="eyebrow">02 — Event creation</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Flyer in, event out.</h3>
-        <p>Most organizers already design a promotional flyer before publishing an event. Instead of asking them to re-type everything, an AI-powered workflow extracts the details straight from the uploaded flyer and fills in the form automatically.</p>
-        <div class="feature-tags">
-          <span>Age range</span><span>Category</span><span>Food availability</span><span>Map integration</span><span>Co-hosts</span>
-        </div>
+        <p>Most organizers already have a flyer. An AI workflow reads the uploaded flyer and fills in the form, so hosts do not retype.</p>
+        <div class="feature-tags"><span>Age range</span><span>Category</span><span>Food</span><span>Location</span><span>Co-hosts</span></div>
       </div>
     </div>
   </div>
-
   <div class="decision">
     <div class="two-col">
-      <div class="img-slot frame">
-        <img src="https://picsum.photos/seed/beyondsunday-feedback/900/650" alt="Feedback and admin dashboard mockup placeholder">
-        <div class="mark m-tl"></div><div class="mark m-br"></div>
-        <div class="caption-tag">Continuous Feedback</div>
-      </div>
+      <div class="img-slot shot" role="img" aria-label="Screen to add: Master calendar">Screen to add: Master calendar</div>
       <div class="text-slot">
-        <span class="eyebrow">03 — Continuous feedback</span>
-        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Designing with the product live.</h3>
-        <p>Every page includes a feedback button, so suggestions come in while people are actually using the app. An admin dashboard tracks new registrations, event creation, and feedback — so the roadmap is driven by real behavior, not assumptions.</p>
+        <span class="eyebrow">03 — Master calendar</span>
+        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">A master calendar.</h3>
+        <p>Hosts asked to see what is already planned before choosing a date, so events do not collide. I built a calendar view for this.</p>
+      </div>
+    </div>
+  </div>
+  <div class="decision">
+    <div class="two-col">
+      <div class="img-slot shot" role="img" aria-label="Screen to add: Carpool and lodging">Screen to add: Carpool and lodging</div>
+      <div class="text-slot">
+        <span class="eyebrow">04 — Rides and lodging</span>
+        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Carpool and lodging.</h3>
+        <p>Attendees can request or offer rides, and conference-goers from the same state can coordinate lodging.</p>
+      </div>
+    </div>
+  </div>
+  <div class="decision">
+    <div class="two-col">
+      <div class="img-slot shot" role="img" aria-label="Screen to add: Ward profile page">Screen to add: Ward profile page</div>
+      <div class="text-slot">
+        <span class="eyebrow">05 — Wards and admins</span>
+        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Ward profile pages and co-admins.</h3>
+        <p>Each ward has a profile that collects its events, and a profile can have more than one admin, so it survives a change of calling.</p>
+      </div>
+    </div>
+  </div>
+  <div class="decision">
+    <div class="two-col">
+      <div class="img-slot shot" role="img" aria-label="Screen to add: Feedback and admin dashboard">Screen to add: Feedback and admin dashboard</div>
+      <div class="text-slot">
+        <span class="eyebrow">06 — Feedback</span>
+        <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Feedback built in.</h3>
+        <p>Every page has a feedback button, and an admin dashboard tracks registrations, events, and feedback, so the roadmap follows real behavior.</p>
       </div>
     </div>
   </div>
 </section>
+</div>
 
-<section id="brand">
+<div class="tab-panel" id="tab-adoption" role="tabpanel">
+<section>
+  <div class="section-head">
+    <span class="label">Adoption and results</span>
+    <h2>Adoption is early: 85 people have signed up and 137 events have been created, but only one or two hosts post regularly.</h2>
+  </div>
+  <div class="stats">
+    <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><circle cx="16.5" cy="8.7" r="2.4"/><path d="M15 14.7c2.6.2 4.5 2 4.5 4.6"/></svg><div class="num serif" data-count-to="85">0</div><div class="cap">People signed up</div></div>
+    <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="1.6"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/><path d="M8 14l2.3 2.3L16 11"/></svg><div class="num serif" data-count-to="137">0</div><div class="cap">Events created</div></div>
+    <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><circle cx="16.5" cy="8.7" r="2.4"/><path d="M15 14.7c2.6.2 4.5 2 4.5 4.6"/></svg><div class="num serif">1&ndash;2</div><div class="cap">Hosts posting regularly</div></div>
+  </div>
+  <p style="margin:34px 0 0; font-style:italic;">The need is clear in conversation. The habit is not there yet.</p>
+</section>
+
+<section style="padding-top:0">
+  <div class="section-head">
+    <span class="label">The adoption challenge</span>
+    <h2>I built what hosts asked for, and adoption stayed low.</h2>
+  </div>
+  <div class="two-col">
+    <p>That includes the master calendar. About one or two hosts post with any regularity, some posted once and stopped, and big events get posted more than small ones. Without regular promotion from me, habits fade.</p>
+    <div>
+      <span class="tag-note">My hypotheses, not yet confirmed</span>
+      <ul class="insight-list">
+        <li><strong>Habit beats features.</strong>Google Sheets, Instagram, and Facebook are free, and everyone is already logged in.</li>
+        <li><strong>Login stops people at the door.</strong>Many people who open a shared link leave without logging in.</li>
+        <li><strong>The link feels untrustworthy.</strong>The current address is a random-looking Vercel link, and the product has had two names (Gather and Beyond Sunday).</li>
+        <li><strong>A calendar needs critical mass.</strong>A master calendar is only useful when most hosts are on it, so it cannot be what draws them in.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="lesson" style="margin-top:56px;">The lesson: what users ask for in conversation is not the same as what they change in practice.</p>
+</section>
+
+<section style="padding-top:0">
+  <div class="section-head">
+    <span class="label">What I am testing next</span>
+    <h2>Four changes aimed at habit, trust, and critical mass.</h2>
+  </div>
+  <ul class="insight-list" style="max-width:820px;">
+    <li><strong>Browse without an account.</strong>Let people browse events without an account, and ask for login only when they RSVP or post.</li>
+    <li><strong>One name, one address.</strong>Use a branded domain and one consistent name.</li>
+    <li><strong>Install prompt.</strong>Add an install prompt so the app sits on the home screen.</li>
+    <li><strong>One region first.</strong>Launch in one region first, so the calendar feels full there.</li>
+  </ul>
+</section>
+
+<section style="padding-top:0">
+  <div class="reflection">
+    <span class="label">Reflection</span>
+    <h2 class="serif">The real leverage point was not more events. It was better-supported hosts.</h2>
+    <p>The next lesson is that support has to beat habit: a tool can be useful and still lose to a free one everyone already opens.</p>
+  </div>
+</section>
+</div>
+
+<div class="tab-panel" id="tab-brand" role="tabpanel">
+<section>
   <div class="section-head">
     <span class="label">Brand Guidelines</span>
-    <h2>A brand built around one idea: it should be easy to show up.</h2>
+    <h2>The brand guide turns the product&rsquo;s purpose into design decisions.</h2>
+  </div>
+  <div class="brand-extra">
+    <div class="next-card"><span class="eyebrow">Signature</span><p>The hand-drawn B. mark and hand-drawn line icons with blush fills.</p></div>
+    <div class="next-card"><span class="eyebrow">How the brand shaped the UI</span><p>Trust is the core promise, so every event page shows the host name clearly and keeps details consistent.</p></div>
   </div>
   <div class="brand-board">
 
@@ -636,24 +798,11 @@
 
   </div>
 </section>
+</div>
 
-<section id="progress">
-  <div class="section-head">
-    <span class="label">Current Progress</span>
-    <h2>Early, but the need keeps getting validated.</h2>
-  </div>
-  <div class="stats">
-    <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><circle cx="16.5" cy="8.7" r="2.4"/><path d="M15 14.7c2.6.2 4.5 2 4.5 4.6"/></svg><div class="num serif" data-count-to="73">0</div><div class="cap">Registered users</div></div>
-    <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="1.6"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/><path d="M8 14l2.3 2.3L16 11"/></svg><div class="num serif" data-count-to="88">0</div><div class="cap">Events created</div></div>
-    <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.2S3.8 15.3 3.8 9.3a4.6 4.6 0 0 1 8.2-2.8 4.6 4.6 0 0 1 8.2 2.8c0 6-8.2 10.9-8.2 10.9Z"/></svg><div class="num serif" data-count-to="19">0</div><div class="cap">Community-submitted events</div></div>
-  </div>
-</section>
+</main>
 
 <footer>
-  <span class="label">Reflection</span>
-  <h2 class="serif">The real leverage point wasn't more events. It was better-supported hosts.</h2>
-  <p>Building Beyond Sunday changed how I think about designing community products. I initially believed the challenge was helping people discover more events. Research showed me the real leverage point was supporting the organizers who make those events possible — so today, Beyond Sunday focuses on reducing the operational burden of hosting.</p>
-  <p class="closing">Looking ahead: how can we help organizers design experiences where people don't just attend events — but genuinely connect with one another?</p>
   <div class="foot-bottom">
     <span>Beyond Sunday — Case Study</span>
     <span>Founder &amp; Product Designer, 2026</span>
@@ -663,21 +812,48 @@
 <script>
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* 1. Fade-up reveals for sections, photos, goals, stats */
-  const els = document.querySelectorAll('.frame, section > .two-col, .goal, .stat');
+  /* 0. Tabs: hash-based, one panel visible at a time */
+  const TABS = ['overview','research','solution','adoption','brand'];
+  const ALIAS = {decisions:'solution', progress:'adoption', 'why-started':'overview'};
+  const tabLinks = document.querySelectorAll('.nav-links a');
+  function showTab(id, scroll){
+    id = ALIAS[id] || id;
+    if(!TABS.includes(id)) id = 'overview';
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active', p.id === 'tab-'+id));
+    tabLinks.forEach(a=>{
+      const on = a.dataset.tab === id;
+      a.classList.toggle('active', on);
+      a.setAttribute('aria-selected', on ? 'true' : 'false');
+      if(on){ a.setAttribute('aria-current','page'); a.scrollIntoView({block:'nearest', inline:'center'}); } else { a.removeAttribute('aria-current'); }
+    });
+    if(scroll) window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'});
+    onScroll();
+  }
+  document.querySelectorAll('a[data-tab]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.dataset.tab;
+      history.pushState(null,'','#'+id);
+      showTab(id, true);
+    });
+  });
+  window.addEventListener('popstate', ()=>showTab(location.hash.slice(1), true));
+  window.addEventListener('hashchange', ()=>showTab(location.hash.slice(1), true));
+
+  /* 1. Fade-up reveals */
+  const els = document.querySelectorAll('.frame, .shot, section > .two-col, .goal, .stat');
   els.forEach(el => el.classList.add('fade-up'));
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:0.15});
   els.forEach(el=>io.observe(el));
 
-  /* 2. Crosshair marks animate in one-by-one when their photo frame is in view */
+  /* 2. Crosshair marks */
   const frames = document.querySelectorAll('.frame');
   const markIo = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        const marks = entry.target.querySelectorAll('.mark');
-        marks.forEach((m,i)=>{
+        entry.target.querySelectorAll('.mark').forEach((m,i)=>{
           setTimeout(()=> m.classList.add('in'), reduceMotion ? 0 : i*140);
         });
         markIo.unobserve(entry.target);
@@ -694,12 +870,10 @@
         const el = entry.target;
         const target = parseInt(el.getAttribute('data-count-to'),10);
         if(reduceMotion){ el.textContent = target; countIo.unobserve(el); return; }
-        const duration = 1200;
-        const start = performance.now();
+        const duration = 1200, start = performance.now();
         function tick(now){
           const p = Math.min((now-start)/duration, 1);
-          const eased = 1 - Math.pow(1-p, 3);
-          el.textContent = Math.round(eased*target);
+          el.textContent = Math.round((1 - Math.pow(1-p, 3))*target);
           if(p < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
@@ -709,33 +883,29 @@
   },{threshold:0.6});
   counters.forEach(c=>countIo.observe(c));
 
-  /* 4. Subtle parallax on the hero photo + scroll progress bar */
+  /* 4. Hero parallax + scroll progress */
   const heroImg = document.querySelector('.hero-frame img');
   const heroFrame = document.querySelector('.hero-frame');
   const progressFill = document.getElementById('scrollProgress');
   let ticking = false;
-
   function onScroll(){
     if(ticking) return;
     ticking = true;
     requestAnimationFrame(()=>{
-      if(heroImg && heroFrame && !reduceMotion){
+      if(heroImg && heroFrame && !reduceMotion && heroFrame.offsetParent){
         const rect = heroFrame.getBoundingClientRect();
-        const shift = Math.max(-40, Math.min(40, rect.top * 0.08));
-        heroImg.style.transform = `translateY(${shift}px)`;
+        heroImg.style.transform = `translateY(${Math.max(-40, Math.min(40, rect.top * 0.08))}px)`;
       }
       if(progressFill){
         const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
-        const pct = scrollHeight > 0 ? (scrollTop/scrollHeight)*100 : 0;
-        progressFill.style.width = pct + '%';
+        const max = doc.scrollHeight - doc.clientHeight;
+        progressFill.style.width = (max > 0 ? (doc.scrollTop/max)*100 : 0) + '%';
       }
       ticking = false;
     });
   }
   document.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
+  showTab(location.hash.slice(1), false);
 </script>
 
 </body>

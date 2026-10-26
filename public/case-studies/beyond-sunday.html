@@ -364,6 +364,8 @@
   .sub-h{font-family:'Fraunces',serif; font-weight:500; font-size:1.35rem; margin:0 0 14px; color:var(--ink);}
   .shot{aspect-ratio:16/10; border:1.5px dashed var(--hairline); border-radius:3px; background:var(--cream-2); display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; color:var(--stone); font-size:.9rem;}
   .shot-img img{display:block; width:100%; height:auto; max-width:520px; margin:0 auto;}
+  mark.hl{background:linear-gradient(transparent 52%, rgba(255,205,86,.55) 52%); color:inherit; padding:0 .15em; margin:0 -.15em; border-radius:2px; -webkit-box-decoration-break:clone; box-decoration-break:clone;}
+  .reflection mark.hl, .bb-independence mark.hl, .bb-cover mark.hl{background:linear-gradient(transparent 52%, rgba(255,255,255,.28) 52%);}
   .tag-note{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--olive-soft); margin-bottom:12px; display:block;}
   .lesson{font-family:'Fraunces',serif; font-style:italic; font-size:clamp(1.3rem,2.6vw,1.9rem); line-height:1.4; color:var(--ink); max-width:820px; margin:0; padding:30px 0 6px; border-top:1px solid var(--hairline);}
   .reflection{background:var(--olive); color:var(--cream); border-radius:6px; padding:clamp(32px,5vw,64px);}
@@ -406,7 +408,7 @@
   <div class="hero-intro">
     <span class="eyebrow">Case Study · Product &amp; UX Design</span>
     <h1 class="serif">Beyond Sunday: Designing a Better Way to Host</h1>
-    <p class="hero-lede">A community events platform for LDS singles, built around the volunteers who organize gatherings. Conversations with about 10 organizers showed that hosting, not attending, is the bottleneck. Early adoption shows that building what hosts ask for is not enough on its own.</p>
+    <p class="hero-lede">A community events platform for LDS singles, built around the volunteers who organize gatherings. Conversations with <mark class="hl">about 15 organizers</mark> showed that <mark class="hl">hosting, not attending, is the bottleneck</mark>. Early adoption shows that <mark class="hl">building what hosts ask for is not enough on its own</mark>.</p>
     <div class="tags">
       <span class="tag">YSA Community</span>
       <span class="tag">Progressive Web App</span>
@@ -440,7 +442,7 @@
     <h2>LDS singles want more events. Hosts carry the weight of making them.</h2>
   </div>
   <div class="two-col">
-    <p>LDS singles want more events to attend, but volunteer hosts carry a heavy, scattered workload to create them, and the free tools they use do not fix it.</p>
+    <p>LDS singles want more events to attend, but <mark class="hl">volunteer hosts carry a heavy, scattered workload to create them</mark>, and the free tools they use do not fix it.</p>
     <ul class="insight-list">
       <li><strong>Attendees</strong>Events are scattered across group chats, social posts, and word of mouth, so singles miss things or feel awkward asking.</li>
       <li><strong>Hosts, planning</strong>Wards and groups cannot see each other&rsquo;s plans, so events collide and split both attendance and volunteers.</li>
@@ -464,7 +466,7 @@
     <div>
       <p>I have been a member of The Church of Jesus Christ of Latter-day Saints for over ten years and have joined many young single adult activities, conferences, and dances. Some of those events built real friendships.</p>
       <p>After moving to California, I found my local community much smaller. Finding people in a similar stage of life got harder, which made me think about how people discover chances to connect.</p>
-      <p>I first assumed the problem was helping people find more events. Attending events and talking with organizers showed me something else: the attendees were not the bottleneck. The hosts were.</p>
+      <p>I first assumed the problem was helping people find more events. Attending events and talking with organizers showed me something else: <mark class="hl">the attendees were not the bottleneck. The hosts were.</mark></p>
     </div>
   </div>
 </section>
@@ -491,13 +493,13 @@
 <section>
   <div class="section-head">
     <span class="label">Research</span>
-    <h2>About 10 hosts and roughly 20 people in total shaped this project.</h2>
+    <h2>About 15 hosts and roughly 20 people in total shaped this project.</h2>
   </div>
   <div class="two-col">
-    <p>They showed that hosting, not attending, is the bottleneck.</p>
+    <p>They showed that <mark class="hl">hosting, not attending, is the bottleneck</mark>.</p>
     <div>
       <h3 class="sub-h">Who I talked to</h3>
-      <p style="margin-top:0">I interviewed about 10 organizers across wards and groups. Counting attendees who are not hosts, I spoke with roughly 20 people in total. I also tested prototypes and attended events.</p>
+      <p style="margin-top:0">I interviewed <mark class="hl">about 15 organizers</mark> across wards and groups. Counting attendees who are not hosts, I spoke with <mark class="hl">roughly 20 people in total</mark>. I also tested prototypes and attended events.</p>
     </div>
   </div>
 </section>
@@ -534,8 +536,8 @@
     <h2>If hosting gets easier, more meaningful events happen.</h2>
   </div>
   <div class="two-col">
-    <p>If more events happen, more people have a natural chance to connect. Instead of solving loneliness head-on, I focused the product on the people who create those opportunities.</p>
-    <p><em>If I can help hosts succeed, everyone benefits.</em></p>
+    <p><mark class="hl">If more events happen, more people have a natural chance to connect.</mark> Instead of solving loneliness head-on, I <mark class="hl">focused the product on the people who create those opportunities</mark>.</p>
+    <p><em><mark class="hl">If I can help hosts succeed, everyone benefits.</mark></em></p>
   </div>
 </section>
 
@@ -580,7 +582,7 @@
       <div class="text-slot">
         <span class="eyebrow">01 — The event page</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">One event page instead of five apps.</h3>
-        <p>The event page is the hub: attendees can RSVP, add the event to a calendar, share it, ask questions, and coordinate carpools without leaving. Getting the shared preview image to render correctly on Facebook improved how events look when shared.</p>
+        <p><mark class="hl">The event page is the hub</mark>: attendees can RSVP, add the event to a calendar, share it, ask questions, and coordinate carpools without leaving. Getting the shared preview image to render correctly on Facebook <mark class="hl">improved how events look when shared</mark>.</p>
       </div>
     </div>
   </div>
@@ -590,7 +592,7 @@
       <div class="text-slot">
         <span class="eyebrow">02 — Event creation</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Flyer in, event out.</h3>
-        <p>Most organizers already have a flyer. An AI workflow reads the uploaded flyer and fills in the form, so hosts do not retype.</p>
+        <p>Most organizers already have a flyer. An AI workflow reads the uploaded flyer and <mark class="hl">fills in the form, so hosts do not retype</mark>.</p>
         <div class="feature-tags"><span>Age range</span><span>Category</span><span>Food</span><span>Location</span><span>Co-hosts</span></div>
       </div>
     </div>
@@ -601,7 +603,7 @@
       <div class="text-slot">
         <span class="eyebrow">03 — Master calendar</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">A master calendar.</h3>
-        <p>Hosts asked to see what is already planned before choosing a date, so events do not collide. I built a calendar view for this.</p>
+        <p>Hosts asked to see what is already planned before choosing a date, <mark class="hl">so events do not collide</mark>. I built a calendar view for this.</p>
       </div>
     </div>
   </div>
@@ -621,7 +623,7 @@
       <div class="text-slot">
         <span class="eyebrow">05 — Wards and admins</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Ward profile pages and co-admins.</h3>
-        <p>Each ward has a profile that collects its events, and a profile can have more than one admin, so it survives a change of calling.</p>
+        <p>Each ward has a profile that collects its events, and a profile can have more than one admin, so it <mark class="hl">survives a change of calling</mark>.</p>
       </div>
     </div>
   </div>
@@ -631,7 +633,7 @@
       <div class="text-slot">
         <span class="eyebrow">06 — Feedback</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">Feedback built in.</h3>
-        <p>Every page has a feedback button, and an admin dashboard tracks registrations, events, and feedback, so the roadmap follows real behavior.</p>
+        <p>Every page has a feedback button, and an admin dashboard tracks registrations, events, and feedback, so <mark class="hl">the roadmap follows real behavior</mark>.</p>
       </div>
     </div>
   </div>
@@ -649,7 +651,7 @@
     <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="1.6"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/><path d="M8 14l2.3 2.3L16 11"/></svg><div class="num serif" data-count-to="137">0</div><div class="cap">Events created</div></div>
     <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><circle cx="16.5" cy="8.7" r="2.4"/><path d="M15 14.7c2.6.2 4.5 2 4.5 4.6"/></svg><div class="num serif">3&ndash;4</div><div class="cap">Hosts posting regularly</div></div>
   </div>
-  <p style="margin:34px 0 0; font-style:italic;">The need is clear in conversation. The habit is not there yet.</p>
+  <p style="margin:34px 0 0; font-style:italic;"><mark class="hl">The need is clear in conversation. The habit is not there yet.</mark></p>
 </section>
 
 <section style="padding-top:0">
@@ -658,7 +660,7 @@
     <h2>I built what hosts asked for, and adoption stayed low.</h2>
   </div>
   <div class="two-col">
-    <p>That includes the master calendar. About three or four hosts post with any regularity, some posted once and stopped, and big events get posted more than small ones. Without regular promotion from me, habits fade.</p>
+    <p>That includes the master calendar. About three or four hosts post with any regularity, some posted once and stopped, and big events get posted more than small ones. <mark class="hl">Without regular promotion from me, habits fade.</mark></p>
     <div>
       <span class="tag-note">My hypotheses, not yet confirmed</span>
       <ul class="insight-list">
@@ -669,7 +671,7 @@
       </ul>
     </div>
   </div>
-  <p class="lesson" style="margin-top:56px;">The lesson: what users ask for in conversation is not the same as what they change in practice.</p>
+  <p class="lesson" style="margin-top:56px;">The lesson: <mark class="hl">what users ask for in conversation is not the same as what they change in practice</mark>.</p>
 </section>
 
 <section style="padding-top:0">
@@ -689,7 +691,7 @@
   <div class="reflection">
     <span class="label">Reflection</span>
     <h2 class="serif">The real leverage point was not more events. It was better-supported hosts.</h2>
-    <p>The next lesson is that support has to beat habit: a tool can be useful and still lose to a free one everyone already opens.</p>
+    <p>The next lesson is that <mark class="hl">support has to beat habit</mark>: a tool can be useful and still lose to a free one everyone already opens.</p>
   </div>
 </section>
 </div>
@@ -702,7 +704,7 @@
   </div>
   <div class="brand-extra">
     <div class="next-card"><span class="eyebrow">Signature</span><p>The hand-drawn B. mark and hand-drawn line icons with blush fills.</p></div>
-    <div class="next-card"><span class="eyebrow">How the brand shaped the UI</span><p>Trust is the core promise, so every event page shows the host name clearly and keeps details consistent.</p></div>
+    <div class="next-card"><span class="eyebrow">How the brand shaped the UI</span><p><mark class="hl">Trust is the core promise</mark>, so every event page shows the host name clearly and keeps details consistent.</p></div>
   </div>
   <div class="brand-board">
 
@@ -716,7 +718,7 @@
       <span class="bb-kicker">01 / Purpose and belief</span>
       <h3 class="bb-display">Easy to show up.</h3>
       <div class="bb-grid-2">
-        <p class="bb-belief">Beyond Sunday makes it easy for LDS singles to show up, by gathering every event near them in one trusted place.</p>
+        <p class="bb-belief">Beyond Sunday makes it <mark class="hl">easy for LDS singles to show up</mark>, by gathering every event near them in one trusted place.</p>
         <p class="bb-belief">We believe connection starts with showing up, and showing up should be easy. We believe community makes life better.</p>
       </div>
       <div class="bb-promises">
@@ -732,7 +734,7 @@
         <div class="bb-trait"><span class="num">1</span><h4>Sincere</h4><p>Gentle and openly caring. Never salesy.</p></div>
         <div class="bb-trait"><span class="num">2</span><h4>Welcoming</h4><p>Approachable. Never intimidating.</p></div>
         <div class="bb-trait"><span class="num">3</span><h4>Lightly playful</h4><p>A little warmth and lightness, never at anyone&rsquo;s expense.</p></div>
-        <div class="bb-trait"><span class="num">4</span><h4>Dependable</h4><p>Accurate, consistent, organized. Trust is the core promise.</p></div>
+        <div class="bb-trait"><span class="num">4</span><h4>Dependable</h4><p>Accurate, consistent, organized. <mark class="hl">Trust is the core promise</mark>.</p></div>
       </div>
     </div>
 

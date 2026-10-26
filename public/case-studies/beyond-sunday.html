@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beyond Sunday — Case Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -284,6 +285,53 @@
     font-size:0.82rem; color:#B9BCA4;
   }
 
+
+  /* ---------- BRAND GUIDELINES ---------- */
+  #brand{ --b-teal:#1F4E5B; --b-cream:#FAF6F0; --b-ink:#2C2523; --b-blush:#EBCFC4; --b-line:#E6DFD3; }
+  .brand-board{ border-radius:18px; overflow:hidden; border:1px solid var(--b-line); background:var(--b-cream); color:var(--b-ink); margin-top:8px; }
+  .brand-board p{ color:var(--b-ink); max-width:none; }
+  .bb-display{ font-family:'Cormorant Garamond',serif; font-weight:600; letter-spacing:-0.005em; }
+  .bb-cover{ background:var(--b-teal); color:var(--b-cream); padding:clamp(40px,7vw,88px) clamp(24px,5vw,72px); }
+  .bb-cover .bb-kicker{ color:var(--b-cream); opacity:.9; }
+  .bb-cover h3{ font-size:clamp(3.2rem,9vw,6.4rem); line-height:.95; margin:22px 0 22px; font-weight:600; }
+  .bb-cover .tagline{ font-size:clamp(1.05rem,2vw,1.35rem); margin:0; color:var(--b-cream); }
+  .bb-part{ padding:clamp(36px,5vw,64px) clamp(24px,5vw,72px); border-top:1px solid var(--b-line); }
+  .bb-kicker{ display:block; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; color:var(--b-teal); }
+  .bb-part h3{ font-size:clamp(1.9rem,3.6vw,2.8rem); line-height:1.1; margin:12px 0 26px; font-weight:600; }
+  .bb-grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:28px 56px; align-items:start; }
+  .bb-grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  @media (max-width:860px){ .bb-grid-2{grid-template-columns:1fr;} .bb-grid-4{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .bb-grid-4{grid-template-columns:1fr;} }
+  .bb-card{ background:#fff; border:1px solid var(--b-line); border-radius:16px; padding:20px 22px; }
+  .bb-card .bb-kicker{ font-size:.68rem; margin-bottom:8px; }
+  .bb-card p{ margin:0; font-size:1rem; line-height:1.5; }
+  .bb-belief{ font-size:1.05rem; line-height:1.7; }
+  .bb-promises{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; }
+  @media (max-width:760px){ .bb-promises{grid-template-columns:1fr;} }
+  .bb-trait .num{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:2rem; color:var(--b-teal); line-height:1; display:block; margin-bottom:10px; }
+  .bb-trait h4{ font-size:1.05rem; margin:0 0 6px; font-weight:600; }
+  .bb-trait p{ font-size:.94rem; line-height:1.55; margin:0; }
+  .bb-voice-rules p{ margin:0 0 10px; font-size:1.02rem; line-height:1.6; }
+  .bb-voice-cards{ display:grid; gap:14px; }
+  .bb-swatches{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  @media (max-width:860px){ .bb-swatches{grid-template-columns:1fr 1fr;} }
+  .bb-swatch{ border-radius:18px; min-height:240px; padding:22px; display:flex; flex-direction:column; justify-content:flex-end; border:1px solid transparent; }
+  .bb-swatch b{ font-size:1.1rem; font-weight:600; }
+  .bb-swatch code{ font-family:'Inter',sans-serif; font-size:.9rem; margin:4px 0 8px; }
+  .bb-swatch span{ font-size:.85rem; line-height:1.4; }
+  .bb-type{ display:grid; grid-template-columns:1fr 1fr; gap:28px 56px; }
+  @media (max-width:760px){ .bb-type{grid-template-columns:1fr;} }
+  .bb-type .aa{ font-size:5rem; line-height:1; color:var(--b-teal); margin-bottom:12px; }
+  .bb-type .sample{ font-size:1.5rem; margin-bottom:8px; }
+  .bb-type small{ display:block; font-size:.9rem; line-height:1.5; }
+  .bb-never{ columns:2; column-gap:56px; list-style:none; margin:0 0 36px; padding:0; }
+  @media (max-width:760px){ .bb-never{columns:1;} }
+  .bb-never li{ font-size:1.05rem; padding:6px 0; break-inside:avoid; }
+  .bb-independence{ background:var(--b-teal); color:var(--b-cream); border-radius:18px; padding:24px 28px; }
+  .bb-independence .bb-kicker{ color:var(--b-cream); margin-bottom:8px; }
+  .bb-independence p{ color:var(--b-cream); margin:0; font-size:1.05rem; line-height:1.55; }
+  .bb-note{ font-size:.85rem; color:var(--stone); margin:14px 4px 0; }
+
   .fade-up{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
   .fade-up.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){ .fade-up{transition:none; opacity:1; transform:none;} }
@@ -297,6 +345,7 @@
     <a href="#overview">Overview</a>
     <a href="#research">Research</a>
     <a href="#decisions">Decisions</a>
+    <a href="#brand">Brand Guidelines</a>
     <a href="#progress">Progress</a>
   </div>
   <div class="nav-actions">
@@ -484,6 +533,107 @@
         <p>Every page includes a feedback button, so suggestions come in while people are actually using the app. An admin dashboard tracks new registrations, event creation, and feedback — so the roadmap is driven by real behavior, not assumptions.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="brand">
+  <div class="section-head">
+    <span class="label">Brand Guidelines</span>
+    <h2>A brand built around one idea: it should be easy to show up.</h2>
+  </div>
+  <div class="brand-board">
+
+    <div class="bb-cover">
+      <span class="bb-kicker">Brand Guidelines / Draft V1</span>
+      <h3 class="bb-display">Beyond<br>Sunday</h3>
+      <p class="tagline">Making it easy to show up.</p>
+    </div>
+
+    <div class="bb-part">
+      <span class="bb-kicker">01 / Purpose and belief</span>
+      <h3 class="bb-display">Easy to show up.</h3>
+      <div class="bb-grid-2">
+        <p class="bb-belief">Beyond Sunday makes it easy for LDS singles to show up, by gathering every event near them in one trusted place.</p>
+        <p class="bb-belief">We believe connection starts with showing up, and showing up should be easy. We believe community makes life better.</p>
+      </div>
+      <div class="bb-promises">
+        <div class="bb-card"><span class="bb-kicker">Promise to attendees</span><p>Everything near you, organized, in one place. No more asking around.</p></div>
+        <div class="bb-card"><span class="bb-kicker">Promise to hosts</span><p>One place to plan, post, and manage your event.</p></div>
+      </div>
+    </div>
+
+    <div class="bb-part">
+      <span class="bb-kicker">02 / Personality</span>
+      <h3 class="bb-display">A friend who knows what is happening this week.</h3>
+      <div class="bb-grid-4">
+        <div class="bb-trait"><span class="num">1</span><h4>Sincere</h4><p>Gentle and openly caring. Never salesy.</p></div>
+        <div class="bb-trait"><span class="num">2</span><h4>Welcoming</h4><p>Approachable. Never intimidating.</p></div>
+        <div class="bb-trait"><span class="num">3</span><h4>Lightly playful</h4><p>A little warmth and lightness, never at anyone&rsquo;s expense.</p></div>
+        <div class="bb-trait"><span class="num">4</span><h4>Dependable</h4><p>Accurate, consistent, organized. Trust is the core promise.</p></div>
+      </div>
+    </div>
+
+    <div class="bb-part">
+      <span class="bb-kicker">03 / Voice</span>
+      <h3 class="bb-display">Warm, plain, and a little light.</h3>
+      <div class="bb-grid-2">
+        <div class="bb-voice-rules">
+          <p>Short sentences.</p>
+          <p>Specific details over hype: day, time, place.</p>
+          <p>No irony. No slang. No pressure.</p>
+        </div>
+        <div class="bb-voice-cards">
+          <div class="bb-card"><span class="bb-kicker">Welcome</span><p>Welcome! Here&rsquo;s what&rsquo;s happening near you this week.</p></div>
+          <div class="bb-card"><span class="bb-kicker">Empty state</span><p>Nothing nearby yet. Want to be the first to host something?</p></div>
+          <div class="bb-card"><span class="bb-kicker">RSVP</span><p>You&rsquo;re in! See you Friday at 6:00.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bb-part">
+      <span class="bb-kicker">04 / Color</span>
+      <h3 class="bb-display">Teal leads. Cream holds it.</h3>
+      <div class="bb-swatches">
+        <div class="bb-swatch" style="background:#1F4E5B;color:#FAF6F0;"><b>Teal</b><code>#1F4E5B</code><span>Signature. Buttons, links, key actions.</span></div>
+        <div class="bb-swatch" style="background:#FAF6F0;color:#2C2523;border-color:#E6DFD3;"><b>Cream</b><code>#FAF6F0</code><span>Backgrounds and cards.</span></div>
+        <div class="bb-swatch" style="background:#2C2523;color:#FAF6F0;"><b>Dark brown-black</b><code>#2C2523</code><span>Headings and body text.</span></div>
+        <div class="bb-swatch" style="background:#EBCFC4;color:#2C2523;"><b>Blush</b><code>#EBCFC4</code><span>Soft accent only.</span></div>
+      </div>
+    </div>
+
+    <div class="bb-part">
+      <span class="bb-kicker">05 / Typography</span>
+      <h3 class="bb-display">Editorial headings. Clear details.</h3>
+      <div class="bb-type">
+        <div>
+          <div class="aa bb-display">Aa</div>
+          <div class="sample bb-display">Friday Game Night</div>
+          <small>Cormorant Garamond. Display headings, event titles, hero text.</small>
+        </div>
+        <div>
+          <div class="aa" style="font-family:'Inter',sans-serif;font-weight:500;">Aa</div>
+          <div class="sample" style="font-family:'Inter',sans-serif;font-size:1.25rem;line-height:1.6;">Every Friday, 6:00 to 8:00 pm</div>
+          <small>Inter. UI, body text, and labels.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="bb-part">
+      <span class="bb-kicker">06 / Never</span>
+      <h3 class="bb-display">What Beyond Sunday never does.</h3>
+      <ul class="bb-never">
+        <li>No pressure or guilt.</li>
+        <li>No implied Church endorsement.</li>
+        <li>No health claims.</li>
+        <li>No matchmaking or dating language.</li>
+        <li>No teasing about being single.</li>
+      </ul>
+      <div class="bb-independence">
+        <span class="bb-kicker">Independence line</span>
+        <p>Beyond Sunday is a community-built events hub for LDS singles. We are not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 

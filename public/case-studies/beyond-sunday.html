@@ -363,6 +363,7 @@
   .insight-list li strong{display:block; font-family:'Fraunces',serif; font-weight:500; font-size:1.12rem; color:var(--ink); margin-bottom:4px;}
   .sub-h{font-family:'Fraunces',serif; font-weight:500; font-size:1.35rem; margin:0 0 14px; color:var(--ink);}
   .shot{aspect-ratio:16/10; border:1.5px dashed var(--hairline); border-radius:3px; background:var(--cream-2); display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; color:var(--stone); font-size:.9rem;}
+  .shot-img img{display:block; width:100%; height:auto; max-width:520px; margin:0 auto;}
   .tag-note{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--olive-soft); margin-bottom:12px; display:block;}
   .lesson{font-family:'Fraunces',serif; font-style:italic; font-size:clamp(1.3rem,2.6vw,1.9rem); line-height:1.4; color:var(--ink); max-width:820px; margin:0; padding:30px 0 6px; border-top:1px solid var(--hairline);}
   .reflection{background:var(--olive); color:var(--cream); border-radius:6px; padding:clamp(32px,5vw,64px);}
@@ -575,7 +576,7 @@
   <p style="margin:0 0 70px">Six key decisions shaped the product.</p>
   <div class="decision">
     <div class="two-col">
-      <div class="img-slot shot" role="img" aria-label="Screen to add: Event page">Screen to add: Event page</div>
+      <div class="img-slot shot-img"><img src="/images/event-page.png" alt="Beyond Sunday home screen listing nearby events, next to an event page for Beach Painting Redondo showing age range, food, host, date, and location" width="1609" height="1755" loading="lazy"></div>
       <div class="text-slot">
         <span class="eyebrow">01 — The event page</span>
         <h3 class="serif" style="font-size:1.6rem; font-weight:500; margin:12px 0 14px;">One event page instead of five apps.</h3>
@@ -841,7 +842,7 @@
   window.addEventListener('hashchange', ()=>showTab(location.hash.slice(1), true));
 
   /* 1. Fade-up reveals */
-  const els = document.querySelectorAll('.frame, .shot, section > .two-col, .goal, .stat');
+  const els = document.querySelectorAll('.frame, .shot, .shot-img, section > .two-col, .goal, .stat');
   els.forEach(el => el.classList.add('fade-up'));
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
